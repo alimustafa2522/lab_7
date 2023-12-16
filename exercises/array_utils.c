@@ -71,14 +71,20 @@ double getMean(const int *arr, int size) {
 
   return avg;
 
-
-
-
-
 }
 
-int getMin(const int *arr, int size) {
+int getMin(const int *arr_1, int size_1) {
   //TODO: implement
+  int i;
+  int *min = &arr_1;
+  for(int i=0;i<=size_1;i++,arr_1++)
+  {
+    if(*arr_1<min)
+    {
+      min = *arr_1;
+    }
+  }
+  return min;
 }
 
 int getIndexOfMin(const int *arr, int size) {
@@ -104,7 +110,7 @@ int **createMultiplicationTable(int n, int m) {
 
 int main()
 {
-    int n;
+      int n;
     printf("Enter size of array\n");
     scnaf("%d",&n);
 
@@ -119,6 +125,26 @@ int main()
     }
 
     printf("The average of the array is %d",getMin(arr,n));
+
+
+  // copy the inputs ;
+   int s;
+    printf("Enter size of array\n");
+    scnaf("%d",&s);
+
+    int arr_1[s];
+    int i;
+
+    printf("Enter Elements of array\n");
+
+    for(i=0;i<=n;i++)
+    {
+      scnaf("%d\n",&arr[i]);
+    }
+
+    printf("The minimum element int the array is %d",getMin(arr_1,s));
+
+    
 
 
 }
