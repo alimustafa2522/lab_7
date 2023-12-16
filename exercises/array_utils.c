@@ -61,7 +61,20 @@ void freeTable(int **table, int n) {
 }
 
 double getMean(const int *arr, int size) {
-  //TODO: implement
+  int i,sum,avg;
+
+  for(i=0;i<=size;i++, arr++)
+  {
+    sum = *arr+sum;
+  }
+  avg = sum/size;
+
+  return avg;
+
+
+
+
+
 }
 
 int getMin(const int *arr, int size) {
@@ -86,4 +99,26 @@ int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) 
 
 int **createMultiplicationTable(int n, int m) {
   //TODO: implement
+}
+
+
+int main()
+{
+    int n;
+    printf("Enter size of array\n");
+    scnaf("%d",&n);
+
+    int arr[n];
+    int i;
+
+    printf("Enter Elements of array\n");
+
+    for(i=0;i<=n;i++)
+    {
+      scnaf("%d\n",&arr[i]);
+    }
+
+    printf("The average of the array is %d",getMin(arr,n));
+
+
 }
