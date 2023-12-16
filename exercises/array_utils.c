@@ -76,10 +76,10 @@ double getMean(const int *arr, int size) {
 int getMin(const int *arr_1, int size_1) {
   //TODO: implement
   int i;
-  int *min = &arr_1;
-  for(int i=0;i<=size_1;i++,arr_1++)
+  int *min = arr_1;
+  for(i=0;i<=size_1;i++,arr_1++)
   {
-    if(*arr_1<min)
+    if(*arr_1<*min)
     {
       min = *arr_1;
     }
@@ -87,12 +87,33 @@ int getMin(const int *arr_1, int size_1) {
   return min;
 }
 
-int getIndexOfMin(const int *arr, int size) {
+int getIndexOfMin(const int *arr_2, int size_2) {
   //TODO: implement
+
+  int i;
+  int *min_index = arr_2;
+  for( i=0;i<=size_2-1;i++,arr_2++)
+  {
+    if(*arr_2 < *(arr_2+1))
+    {
+      min_index = i;
+    }
+  }
+  return min_index;
 }
 
-int getMax(const int *arr, int size) {
-  //TODO: implement
+int getMax(const int *arr_3, int k) 
+ { int i;
+  int *max = arr_3; 
+
+  for(i=0;i<k;i++)
+  {
+      if(*arr_3>*max)
+      {
+         *max = *arr_3; 
+      }
+  }
+  return *max;
 }
 
 int getIndexOfMax(const int *arr, int size) {
@@ -112,37 +133,73 @@ int main()
 {
       int n;
     printf("Enter size of array\n");
-    scnaf("%d",&n);
+    scanf("%d",&n);
 
     int arr[n];
     int i;
 
     printf("Enter Elements of array\n");
 
-    for(i=0;i<=n;i++)
+    for(i=0;i<n;i++)
     {
-      scnaf("%d\n",&arr[i]);
+      scanf("%d\n",&arr[i]);
     }
 
     printf("The average of the array is %d",getMin(arr,n));
 
 
-  // copy the inputs ;
+  // copy the inputs 
    int s;
     printf("Enter size of array\n");
-    scnaf("%d",&s);
+    scanf("%d",&s);
 
     int arr_1[s];
     int i;
 
     printf("Enter Elements of array\n");
 
-    for(i=0;i<=n;i++)
+    for(i=0;i<s;i++)
     {
-      scnaf("%d\n",&arr[i]);
+      scanf("%d\n",&arr[i]);
     }
 
     printf("The minimum element int the array is %d",getMin(arr_1,s));
+
+    // i copy the inputs just;
+
+     int a;
+    printf("Enter size of array\n");
+    scanf("%d",&a);
+
+    int arr_2[a];
+    int i;
+
+    printf("Enter Elements of array\n");
+
+    for(i=0;i<n;i++)
+    {
+      scanff("%d\n",&arr_2[i]);
+    }
+
+    printf("The Minimum value is placed at index %d",getIndexOfMin(arr_2,a));
+
+
+    int k;
+    printf("Enter size of array\n");
+    scanf("%d",&k);
+
+    int arr_3[k];
+    int i;
+
+    printf("Enter Elements of array\n");
+
+    for(i=0;i<k;i++)
+    {
+      scanf("%d\n",&arr_2[i]);
+    }
+
+    printf("The Minimum value is placed at index %d",getIndexOfMin(arr_2,a));
+
 
     
 
