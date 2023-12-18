@@ -61,15 +61,15 @@ void freeTable(int **table, int n) {
 }
 
 double getMean(const int *arr, int size) {
-  int i,sum,avg;
+  int i,sum=0;
 
-  for(i=0;i<=size;i++, arr++)
+  for(i=0;i<size;i++, arr++)
   {
     sum = *arr+sum;
   }
-  avg = sum/size;
 
-  return avg;
+
+  return (double)sum/size;
 
 }
 
@@ -81,20 +81,20 @@ int getMin(const int *arr_1, int size_1) {
   {
     if(*arr_1<*min)
     {
-      min = *arr_1;
+      *min = *arr_1;
     }
   }
-  return min;
+  return *min;
 }
 
 int getIndexOfMin(const int *arr_2, int size_2) {
   //TODO: implement
 
   int i;
-  int *min_index = arr_2;
-  for( i=0;i<=size_2-1;i++,arr_2++)
+  int min_index = 0;
+  for( i=0;i<=size_2;i++,arr_2++)
   {
-    if(*arr_2 < *(arr_2+1))
+    if(arr_2 < (arr_2+1))
     {
       min_index = i;
     }
@@ -116,8 +116,20 @@ int getMax(const int *arr_3, int k)
   return *max;
 }
 
-int getIndexOfMax(const int *arr, int size) {
+int getIndexOfMax(const int *arr_4, int size_4) {
   //TODO: implement
+
+  int *max_index = arr_4;
+  int i;
+  for(i=0;i<size_4;i++)
+  {
+    if(*arr_4 >*max_index)
+    {
+      
+    }
+  }
+
+
 }
 
 int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
@@ -145,7 +157,7 @@ int main()
       scanf("%d\n",&arr[i]);
     }
 
-    printf("The average of the array is %d",getMin(arr,n));
+    printf("The average of the array is %.2f",getMin(arr,n));
 
 
   // copy the inputs 
@@ -176,7 +188,7 @@ int main()
 
     printf("Enter Elements of array\n");
 
-    for(i=0;i<n;i++)
+    for(i=0;i<a;i++)
     {
       scanff("%d\n",&arr_2[i]);
     }
@@ -200,8 +212,23 @@ int main()
 
     printf("The Minimum value is placed at index %d",getIndexOfMin(arr_2,a));
 
-
+    // cpy the same lines of code as inputs;
     
+    int j;
+    printf("Enter size of array\n");
+    scanf("%d",&k);
+
+    int arr_4[j];
+    int i;
+
+    printf("Enter Elements of array\n");
+
+    for(i=0;i<j;i++)
+    {
+      scanf("%d\n",&arr_4[i]);
+    }
+
+    printf("The Maximum value is placed at index %d",getIndexOfMin(arr_4,j));
 
 
 }
