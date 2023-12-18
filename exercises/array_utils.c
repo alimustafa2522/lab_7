@@ -94,7 +94,7 @@ int getIndexOfMin(const int *arr_2, int size_2) {
   int min_index = 0;
   for( i=0;i<=size_2;i++,arr_2++)
   {
-    if(arr_2 < (arr_2+1))
+    if(arr_2[i] < arr_2[min_index])
     {
       min_index = i;
     }
@@ -190,7 +190,7 @@ int main()
 
     for(i=0;i<a;i++)
     {
-      scanff("%d\n",&arr_2[i]);
+      scanf("%d",&arr_2[i]);
     }
 
     printf("The Minimum value is placed at index %d",getIndexOfMin(arr_2,a));
