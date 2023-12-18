@@ -76,15 +76,15 @@ double getMean(const int *arr, int size) {
 int getMin(const int *arr_1, int size_1) {
   //TODO: implement
   int i;
-  int *min = arr_1;
-  for(i=0;i<=size_1;i++,arr_1++)
+  int min = arr_1[0];
+  for(i=0;i<size_1;i++)
   {
-    if(*arr_1<*min)
+    if(arr_1<min)
     {
-      *min = *arr_1;
+      min = arr_1[i];
     }
   }
-  return *min;
+  return min;
 }
 
 int getIndexOfMin(const int *arr_2, int size_2) {
@@ -172,10 +172,10 @@ int main()
 
     for(i=0;i<s;i++)
     {
-      scanf("%d\n",&arr[i]);
+      scanf("%d",&arr[i]);
     }
 
-    printf("The minimum element int the array is %d",getMin(arr_1,s));
+    printf("The minimum element in the array is %d",getMin(arr_1,s));
 
     // i copy the inputs just;
 
