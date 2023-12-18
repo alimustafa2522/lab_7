@@ -104,30 +104,32 @@ int getIndexOfMin(const int *arr_2, int size_2) {
 
 int getMax(const int *arr_3, int k) 
  { int i;
-  int *max = arr_3; 
+  int max = arr_3[0]; 
 
   for(i=0;i<k;i++)
   {
-      if(*arr_3>*max)
+      if(arr_3[i]>max)
       {
-         *max = *arr_3; 
+         max = arr_3[i]; 
       }
   }
-  return *max;
+  return max;
 }
 
 int getIndexOfMax(const int *arr_4, int size_4) {
   //TODO: implement
 
-  int *max_index = arr_4;
+  int max_index = arr_4[0];
   int i;
   for(i=0;i<size_4;i++)
   {
-    if(*arr_4 >*max_index)
+    if(arr_4[0] >max_index)
     {
-      
+      max_index = arr_4[i];
     }
+
   }
+  return max_index;
 
 
 }
@@ -157,7 +159,7 @@ int main()
       scanf("%d\n",&arr[i]);
     }
 
-    printf("The average of the array is %.2f",getMin(arr,n));
+    printf("The average of the array is %.2f",getMean(arr,n));
 
 
   // copy the inputs 
@@ -210,7 +212,7 @@ int main()
       scanf("%d\n",&arr_2[i]);
     }
 
-    printf("The Minimum value is placed at index %d",getIndexOfMin(arr_2,a));
+    printf("The Maximum value  %d",getMax(arr_3,k));
 
     // cpy the same lines of code as inputs;
     
@@ -228,7 +230,7 @@ int main()
       scanf("%d\n",&arr_4[i]);
     }
 
-    printf("The Maximum value is placed at index %d",getIndexOfMin(arr_4,j));
+    printf("The Maximum value is placed at index %d",getIndexOfMax(arr_4,j));
 
 
 }
