@@ -136,101 +136,50 @@ int getIndexOfMax(const int *arr_4, int size_4) {
 
 int * filterThreshold(const int *arr, int size, int threshold, int *resultSize) {
   //TODO: implement
+  
+  int count;
+
+  for(int i = 0 ; i<size ;i++)
+  {
+      if(arr[i]>=threshold)
+      {
+        count++;
+      }
+
+  }
+  int *dyn_arr = (int*) malloc(4*count); 
+
+*resultSize = count;
+
+int index=0;
+
+if(dyn_arr==NULL){
+
+  printf("\nMemory Allocation Error\n");
+  exit(1);
+
 }
+
+for (int i = 0; i < size; i++)
+{
+  if(arr[i] >= threshold) {
+
+dyn_arr[index]=arr[i];
+
+index++;
+
+  }
+
+}
+return dyn_arr;  
+}
+
+  
+
+
+
+
 
 int **createMultiplicationTable(int n, int m) {
   //TODO: implement
-}
-
-
-int main()
-{
-      int n;
-    printf("Enter size of array\n");
-    scanf("%d",&n);
-
-    int arr[n];
-    int i;
-
-    printf("Enter Elements of array\n");
-
-    for(i=0;i<n;i++)
-    {
-      scanf("%d\n",&arr[i]);
-    }
-
-    printf("The average of the array is %.2f",getMean(arr,n));
-
-
-  // copy the inputs 
-   int s;
-    printf("Enter size of array\n");
-    scanf("%d",&s);
-
-    int arr_1[s];
-    int i;
-
-    printf("Enter Elements of array\n");
-
-    for(i=0;i<s;i++)
-    {
-      scanf("%d",&arr[i]);
-    }
-
-    printf("The minimum element in the array is %d",getMin(arr_1,s));
-
-    // i copy the inputs just;
-
-     int a;
-    printf("Enter size of array\n");
-    scanf("%d",&a);
-
-    int arr_2[a];
-    int i;
-
-    printf("Enter Elements of array\n");
-
-    for(i=0;i<a;i++)
-    {
-      scanf("%d",&arr_2[i]);
-    }
-
-    printf("The Minimum value is placed at index %d",getIndexOfMin(arr_2,a));
-
-
-    int k;
-    printf("Enter size of array\n");
-    scanf("%d",&k);
-
-    int arr_3[k];
-    int i;
-
-    printf("Enter Elements of array\n");
-
-    for(i=0;i<k;i++)
-    {
-      scanf("%d\n",&arr_2[i]);
-    }
-
-    printf("The Maximum value  %d",getMax(arr_3,k));
-
-    // cpy the same lines of code as inputs;
-    
-    int j;
-    printf("Enter size of array\n");
-    scanf("%d",&k);
-
-    int arr_4[j];
-    int i;
-
-    printf("Enter Elements of array\n");
-
-    for(i=0;i<j;i++)
-    {
-      scanf("%d\n",&arr_4[i]);
-    }
-
-    printf("The Maximum value is placed at index %d",getIndexOfMax(arr_4,j));
-
-
 }

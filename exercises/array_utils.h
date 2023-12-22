@@ -67,3 +67,4 @@ int * filterThreshold(const int *arr, int size, int threshold, int *resultSize);
  * TODO: add your own documentation
  */
 int **createMultiplicationTable(int n, int m);
+
